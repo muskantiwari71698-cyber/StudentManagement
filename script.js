@@ -35,17 +35,17 @@ function displayStudents() {
     let output = document.getElementById("output");
 
     if (students.length === 0) {
-        output.innerHTML = "<p>No students found.</p>";
+        output.innerHTML = "<p>No student records available.</p>";
         return;
     }
 
-    output.innerHTML = "<h3>Student Details</h3>";
+    output.innerHTML = "<h3>All Student Details</h3>";
 
     students.forEach(function(student) {
         output.innerHTML +=
-            "<p>ID: " + student.id +
-            " | Name: " + student.name +
-            " | Course: " + student.course + "</p>";
+            "<p><strong>Student ID:</strong> " + student.id +
+            " | <strong>Name:</strong> " + student.name +
+            " | <strong>Course:</strong> " + student.course + "</p>";
     });
 }
 

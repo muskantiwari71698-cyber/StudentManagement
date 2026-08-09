@@ -9,6 +9,14 @@ function addStudent() {
         alert("Please enter all student details.");
         return;
     }
+    let existingStudent = students.find(function(s) {
+    return s.id === id;
+});
+
+if (existingStudent) {
+    alert("Student ID already exists.");
+    return;
+}
 
     students.push({
         id: id,

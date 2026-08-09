@@ -50,7 +50,12 @@ function displayStudents() {
 }
 
 function searchStudent() {
-    let id = document.getElementById("studentId").value;
+    let id = document.getElementById("studentId").value.trim();
+
+    if (id === "") {
+        alert("Please enter Student ID to search.");
+        return;
+    }
 
     let student = students.find(function(s) {
         return s.id === id;
@@ -64,7 +69,7 @@ function searchStudent() {
             "<p>Course: " + student.course + "</p>";
     } else {
         document.getElementById("output").innerHTML =
-            "<p>Student not found.</p>";
+            "<p>Student with ID " + id + " was not found.</p>";
     }
 }
 
